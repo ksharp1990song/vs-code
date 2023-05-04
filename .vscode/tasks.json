@@ -1,0 +1,41 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++.exe Aktive Datei kompilieren",
+            "command": "C:\\Users\\uk093878\\mingw64\\bin\\g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-ggdb",
+                "${file}",
+                "-IC:\\Users\\uk093878\\Anaconda3\\envs\\kai\\include",
+                "-LC:\\Users\\uk093878\\Anaconda3\\envs\\kai\\libs",
+                "-IC:\\Users\\uk093878\\vcpkg\\installed\\x64-windows\\include",
+                "-LC:\\Users\\uk093878\\vcpkg\\installed\\x64-windows\\lib",
+                "-IC:\\Users\\uk093878\\Anaconda3\\envs\\kai\\Lib\\site-packages\\numpy\\core\\include",
+                "-LC:\\Users\\uk093878\\Anaconda3\\envs\\kai\\Lib\\site-packages\\numpy\\core\\lib",
+                "-IC:\\Users\\uk093878\\vcpkg\\installed\\x64-windows\\include\\arrow",
+                "-IC:\\Users\\uk093878\\vcpkg\\installed\\x64-windows\\include\\NumCpp",
+                "-lpython39",
+                "-lpython3",
+                "-l_tkinter",
+                "-lnpymath",
+                "-std=c++17",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Vom Debugger generierte Aufgabe."
+        }
+    ],
+    "version": "2.0.0"
+}

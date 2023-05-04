@@ -1,0 +1,26 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:\\Users\\uk093878\\Anaconda3\\envs\\kai\\include/**",
+                "C:\\Users\\uk093878\\Anaconda3\\envs\\kai\\libs/**",
+                "C:\\Users\\uk093878\\vcpkg\\installed\\x64-windows\\include/**",
+                "C:\\Users\\uk093878\\vcpkg\\installed\\x64-windows\\lib/**",
+                "C:\\Users\\uk093878\\Anaconda3\\envs\\kai\\Lib\\site-packages\\numpy\\core\\include/**",
+                "C:\\Users\\uk093878\\Anaconda3\\envs\\kai\\Lib\\site-packages\\numpy\\core\\lib/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "C:\\Users\\uk093878\\mingw64\\bin\\g++.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-gcc-x64"
+        }
+    ],
+    "version": 4
+}
