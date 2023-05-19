@@ -43,10 +43,10 @@ ml_model_NR = xb.XGBClassifier(objective=xgb_obj, tree_method=tree_method, verbo
                                min_child_weight=min_child_weight, gamma=gamma, subsample=subsample,
                                colsample_bytree=colsample_bytree, reg_lambda=reg_lambda, reg_alpha=reg_alpha)
 
-
-def loadSZPModel(target):
-    ml_model_NG.load_model(f'trained_Model_SZPNG{target}.txt')
-    ml_model_NR.load_model(f'trained_Model_SZPNR{target}.txt')
+def loadSZPModel():
+    ml_model_NG.load_model('trained_Model_SZPNG1.txt')
+    ml_model_NR.load_model('trained_Model_SZPNR1.txt')
+    
 
 
 def predictNG(tx, sb1, sb2, sb3, sb4, sb5, sb6, gs1, gs2, gs3, gs4, gs5, gs6, rs1, rs2, rs3, rs4, rs5, rs6):
@@ -56,8 +56,8 @@ def predictNG(tx, sb1, sb2, sb3, sb4, sb5, sb6, gs1, gs2, gs3, gs4, gs5, gs6, rs
                                             "GS1", "GS2", "GS3", "GS4", "GS5", "GS6",
                                             "RS1", "RS2", "RS3", "RS4", "RS5", "RS6"])
     ng_pred = ml_model_NG.predict(df)
-
-    return ng_pred
+    
+    return int(ng_pred[0])
 
 
 def predictNR(tx, sb1, sb2, sb3, sb4, sb5, sb6, gs1, gs2, gs3, gs4, gs5, gs6, rs1, rs2, rs3, rs4, rs5, rs6):
@@ -67,11 +67,6 @@ def predictNR(tx, sb1, sb2, sb3, sb4, sb5, sb6, gs1, gs2, gs3, gs4, gs5, gs6, rs
                                      "RS1", "RS2", "RS3", "RS4", "RS5", "RS6"])
     nr_pred = ml_model_NR.predict(df)
 
-    return nr_pred
+    return int(nr_pred[0])
 
 
-loadSZPModel(1)
-ng= predictNG(61, 1, 0, 0, 1, 0, 0, 34, 134, 53, 34, 66, 53, 71, 127, 43, 61, 61, 43)
-print(f'NG: {ng}')
-nr= predictNR(61, 1, 0, 0, 1, 0, 0, 34, 134, 53, 34, 66, 53, 71, 127, 43, 61, 61, 43)
-print(f'NR: {nr}')

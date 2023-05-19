@@ -43,7 +43,6 @@ ml_model_NR = xb.XGBClassifier(objective=xgb_obj, tree_method=tree_method, verbo
                                min_child_weight=min_child_weight, gamma=gamma, subsample=subsample,
                                colsample_bytree=colsample_bytree, reg_lambda=reg_lambda, reg_alpha=reg_alpha)
 
-
 def square(x):
     return x * x
 
@@ -51,6 +50,8 @@ def loadSZPModel():
     ml_model_NG.load_model('trained_Model_SZPNG1.txt')
     ml_model_NR.load_model('trained_Model_SZPNR1.txt')
     
+
+
 def predictNG(tx, sb1, sb2, sb3, sb4, sb5, sb6, gs1, gs2, gs3, gs4, gs5, gs6, rs1, rs2, rs3, rs4, rs5, rs6):
 
     data = [[tx, sb1, sb2, sb3, sb4, sb5, sb6, gs1, gs2, gs3, gs4, gs5, gs6, rs1, rs2, rs3, rs4, rs5, rs6]]
@@ -58,7 +59,7 @@ def predictNG(tx, sb1, sb2, sb3, sb4, sb5, sb6, gs1, gs2, gs3, gs4, gs5, gs6, rs
                                             "GS1", "GS2", "GS3", "GS4", "GS5", "GS6",
                                             "RS1", "RS2", "RS3", "RS4", "RS5", "RS6"])
     ng_pred = ml_model_NG.predict(df)
-    
+
     return int(ng_pred[0])
 
 
